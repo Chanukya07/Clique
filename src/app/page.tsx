@@ -1,4 +1,5 @@
 import MaxWidthWrapper from '@/components/MaxWidthWrapper'
+import React from 'react';
 import {
   Button,
   buttonVariants,
@@ -28,31 +29,41 @@ const perks = [
 
 export default function Home() {
   return (
-    <html>
-      <main>
-        <MaxWidthWrapper>
-          <div className='py-20 mx-auto text-center flex flex-col items-center max-w-3xl'>
-            <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
-              Your onestop location for high-quality{' '}
-              <span className='text-blue-600'>
-                Images
-              </span>
-              .
-            </h1>
-            <p className='mt-6 text-lg max-w-prose text-muted-foreground'>
-            Welcome to Clique, your premier destination for stunning stock photography.
-            At Clique, every asset is meticulously verified by our team, guaranteeing the 
-            highest quality standards for our community of photographers and buyers alike.
-            </p>
-            <div className='flex flex-col sm:flex-row gap-4 mt-6'>
-              <Link href='/products'className={buttonVariants()}> Browse Trending</Link>
-              <Button variant='ghost'>
-                Our quality promise &rarr;
-              </Button>
-            </div>
+    <>
+      <MaxWidthWrapper>
+        <div className='py-20 mx-auto text-center flex flex-col items-center max-w-3xl'>
+          <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
+          Your onestop location for high-quality{' '}
+            <span className='text-blue-600'>
+            Images
+            </span>
+            .
+          </h1>
+          <p className='mt-6 text-lg max-w-prose text-muted-foreground'>
+          Welcome to Clique, a premier destination for photography nerds.
+          At Clique, every image is meticulously verified by our team, guaranteeing the 
+          quality standards for our community of photographers and buyers alike.
+          </p>
+          <div className='flex flex-col sm:flex-row gap-4 mt-6'>
+            <Link
+              href='/products'
+              className={buttonVariants()}>
+              Browse Trending
+            </Link>
+            <Button variant='ghost'>
+              Our quality promise &rarr;
+            </Button>
           </div>
-        </MaxWidthWrapper>
-        <section className='border-t border-gray-200 bg-gray-50'>
+        </div>
+
+        {/* <ProductReel
+          query={{ sort: 'desc', limit: 4 }}
+          href='/products?sort=recent'
+          title='Brand new'
+        /> */}
+      </MaxWidthWrapper>
+
+      <section className='border-t border-gray-200 bg-gray-50'>
         <MaxWidthWrapper className='py-20'>
           <div className='grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0'>
             {perks.map((perk) => (
@@ -78,7 +89,6 @@ export default function Home() {
           </div>
         </MaxWidthWrapper>
       </section>
-      </main>
-    </html>
+    </>
   )
 }
