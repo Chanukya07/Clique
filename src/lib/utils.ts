@@ -56,7 +56,7 @@ export function constructMetadata({
       title,
       description,
       images: [image],
-      creator: '@bhaumikreddy',
+      creator: '@Chanukya07',
     },
     icons,
     metadataBase: new URL('https://cliqueproject.up.railway.app/'),
